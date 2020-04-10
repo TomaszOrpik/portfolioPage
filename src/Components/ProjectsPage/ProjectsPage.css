@@ -1,0 +1,355 @@
+@import url('https://fonts.googleapis.com/css?family=Quattrocento+Sans&display=swap');
+
+/* music player page styling */
+.projContainer {
+    width: calc(100vw - 100px);
+    height: 100vh;
+    position: relative;
+    display: flex;
+    font: 300 2.2vw/1 'Source Sans Pro', Arial, sans-serif;
+    color: #fff;
+    text-align: left;
+    letter-spacing: -3px;
+    background-color: #0c0c0c;
+}
+
+.projContainer h1 {
+    position: absolute;
+    top: 12vh;
+    right: 6vw;
+    z-index: 3;
+}
+
+.projContainer img {
+    position: absolute;
+    top: 6vh;
+    left: calc(8vw - 100px);
+    width: 802.5px;
+    height: 457.5px;
+    padding: 5px 0 5px 5px;
+    background-color: #0c0c0c;
+}
+
+.projDescription {
+    position: absolute;
+    width: 25vw;
+    height: auto;
+    top: 28vh;
+    right: 10vw;
+    color: #fff;
+    font-size: 2vh;
+    text-transform: none;
+    letter-spacing: normal;
+}
+
+.technologies {
+    position: absolute;
+    width: 90px;
+    height: 60px;
+    top: 70vh;
+    right: 29%;
+    color: #fff;
+    font-size: 20px;
+    padding-top: 30px;
+    padding-left: 20px;
+    text-transform: none;
+    font-family: 'Quattrocento Sans', sans-serif;
+    letter-spacing: normal;
+    font-weight: bolder;
+}
+
+.technologies img {
+    width: 45px;
+    height: 40px;
+    top: 1.5vh;
+    left: 140px;
+    padding-top: 30px;
+    background-color: transparent;
+}
+
+.projLinks {
+    position: absolute;
+    z-index: 11;
+    right: 35vw;
+    top: 71vh;
+}
+
+.projIcons {
+    left: 20vw;
+    cursor: url(cursorPointerWhite.cur),auto !important;
+    animation: RedToWhite 0.5s forwards linear;
+    font-size: 80px;
+    color: #fff;
+}
+
+.pi1 {
+    position: absolute;
+    margin-left: -80px;
+}
+
+.pi2 {
+    position: absolute;
+    margin-left: 30px;
+}
+
+.projIcons:hover {
+    animation: WhiteToRed 0.5s forwards linear;
+}
+
+@keyframes WhiteToRed {
+    from {
+        color: #fff;
+    } to {
+        color: #dc143c;
+    }
+}
+
+@keyframes RedToWhite {
+    from {
+        color: #dc143c;
+    } to {
+    color: #fff;
+     }
+}
+
+/* Calendar Page styling*/
+
+.WhiteContainer {
+    color: #000;
+    background-color: #fff;
+    text-transform: none;
+}
+
+.WhiteContainer h1 {
+    left: calc(17vw - 100px);
+    top: 15vh;
+}
+
+.WhiteDescription {
+    color: #000;
+    width: 25vw;
+    left: calc(15vw - 100px);
+    top: 30vh;
+}
+
+.WhiteContainer img {
+    background-color: #fff;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.8);
+    left: auto;
+    right: 5vw;
+    top: 10vh;
+    width:50vw;
+    height: auto;
+}
+
+.WhiteTech {
+    color: #000;
+    left: calc(14vw - 100px);
+    top: 65vh;
+}
+
+.WhiteTech img {
+    box-shadow: none;
+    left: calc(14vw - 100px);
+    top: 1.5vh;
+    padding-top: 30px;
+    background-color: transparent;
+}
+
+.WhiteTech .projTechIcon {
+    width: 35px;
+    left: 210px;
+}
+
+.WhiteTechIcon1 {
+    width: 45px !important;
+    height: 40px;
+    left: 195px !important;
+}
+
+.WhiteTechIcon2 {
+    left: 240px !important;
+}
+
+.WhiteTechIcon3 {
+    width: 45px !important;
+    left: 150px !important;
+}
+
+.projIcons.pci1 {
+    position: absolute;
+    top: 10vh;
+    left: 20vw;
+    cursor: url(cursorPointer.cur),auto !important;
+    animation: RedToBlack 0.5s forwards linear;
+    font-size: 80px;
+    color: #fff;
+}
+
+.pci1:hover {
+    animation: BlackToRed 0.5s forwards linear;
+}
+
+@keyframes BlackToRed {
+    from {
+        color: #000;
+    } to {
+          color: #dc143c;
+      }
+}
+
+@keyframes RedToBlack {
+    from {
+        color: #dc143c;
+    } to {
+          color: #000;
+      }
+}
+
+.playerLinks {
+    left: -10%;
+}
+
+/* psi behawior formatting */
+
+.pbTitle {
+    left: calc(8vw - 100px) !important;
+}
+
+.projSmallImg {
+    height: 30vh !important;
+    width: auto !important;
+    top: 43vh !important;
+    right: 12vw !important;
+}
+
+.pbDescription {
+    top: 30vh;
+    width: 25vw !important;
+}
+
+PHProjImg {
+    width: 20vw !important;
+    height: auto !important;
+}
+
+.pbTech {
+    top: 55vh;
+}
+
+.pbi1 {
+    left: 150px !important;
+}
+.pbi2 {
+    width: 90px !important;
+    height: 50px !important;
+    top: 10px !important;
+    left: 175px !important;
+}
+.pbi3 {
+    height: 30px !important;
+    top: 20px !important;
+    left: 250px !important;
+}
+.pbi4 {
+    width: 45px !important;
+    height: 50px !important;
+    top: 5px !important;
+    left: 300px !important;
+}
+.pbi5 {
+    width: 45px !important;
+    height: 50px !important;
+    top: 10px !important;
+    left: 340px !important;
+}
+
+/* image editor formatting */
+
+.imageEditorFrame {
+    position: absolute;
+    top: 10vh;
+    left: calc(8vw - 100px);
+    width: 30vw;
+    height: 30vw;
+}
+
+.insideFrame {
+    width: 100%;
+    height: 100%;
+    overflowX: hidden;
+    overflowY: hidden;
+    border: 5px solid silver;
+}
+
+.ieTitle {
+    left: auto !important;
+    right: 15vw;
+}
+
+.ieTech {
+    top: 56vh;
+}
+
+.ieIcon1 {
+    top: 17px !important;
+}
+.ieIcon2 {
+    top: 20px !important;
+    left: 190px !important;
+}
+.ieIcon3 {
+    width: 35px !important;
+    height: 35px !important;
+    top: 22px !important;
+    left: 240px !important;
+}
+
+.ieLinks {
+    top: 75vh;
+}
+
+/* CSS FOR PORTFOLIO OVERVIEW */
+
+
+
+
+.fontRed {
+    color: #dc143c;
+}
+
+@media screen and (max-width: 770px) {
+    .WhiteProjImg {
+        top: 5vw !important;
+        width: 80vw !important;
+    }
+    .projTitle {
+        top: 38% !important;
+        width: 80vw !important;
+    }
+    .projDescription {
+        top: 42% !important;
+        width: 80vw !important;
+    }
+    .projSmallImg {
+        display: none;
+    }
+    .technologies {
+        top: 63% !important;
+        left: 0 !important;
+    }
+    .pbTitle {
+        left: 50px !important;
+    }
+    .imageEditorFrame {
+        width: 80vw;
+    }
+    .playerLinks {
+        top: 75vh !important;
+    }
+    .projLinks {
+        right: 50vw !important;
+    }
+}
+
+

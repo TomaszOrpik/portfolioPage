@@ -1,38 +1,554 @@
+@import url('https://fonts.googleapis.com/css?family=Fredoka+One&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Quicksand');
+
+body {
+  margin: 0;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  monospace;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  cursor: url(cursorPointerDefault.cur),auto !important;
+  text-decoration: none !important;
+  -ms-overflow-style: none;
+  overflow-x: hidden;
+}
+body::-webkit-scrollbar { display: none }
+
 .App {
+  position: absolute;
+  overflow: hidden;
+  width: 100vw;
+}
+
+.ppMain {
+  position: relative;
+  float: right;
+  width: calc(100vw - 100px);
+  left: 0;
+}
+
+.ppNavBack {
+  position: absolute;
+  width: 750px;
+  height: 500vh;
+  top: 100vh;
+  left: 0;
+  z-index: -2;
+}
+
+.ppNavBackWhite {
+  height: 100vh;
+  background-color: #fff;
+}
+.ppNavBackBlack {
+  height: 100vh;
+  background-color: #0c0c0c;
+}
+.ppNavBackGrey {
+  height: 100vh;
+  background-color: #0c0c0c;
+}
+
+.fadeInAnim {
+  animation: fadeIn 0.5s forwards linear;
+}
+
+.fadeOutAnim {
+  animation: fadeOut 0.5s forwards linear;
+}
+
+.menuContainer {
+  position: Fixed;
+  width: 750px;
+  height: 100vh;
+  bottom: 0;
+  left: -650px;
+}
+
+.moveLeft {
+  animation: moveL 0.5s forwards linear;
+}
+.moveRight {
+  animation: moveR 0.5s forwards linear;
+}
+.moveLeftReverse {
+  animation: moveLRev 0.5s forwards linear;
+}
+.moveRightReverse {
+  animation: moveRRev 0.5s forwards linear;
+}
+
+@keyframes moveL {
+  from {
+    left: -650px;
+  }  to {
+  left: 0;
+   }
+}
+
+@keyframes moveR {
+  from {
+    left: 0;
+    filter: grayscale(0%);
+  } to {
+  left: 650px;
+  filter: grayscale(100%);
+   }
+}
+
+@keyframes moveLRev {
+  from {
+    left: 0;
+  }  to {
+       left: -650px;
+     }
+}
+
+@keyframes moveRRev {
+  from {
+    left: 650px;
+  } to {
+      left: 0;
+    }
+}
+
+/* navigation */
+.navigation {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  bottom: 0;
+  height: 40px;
+  width: 40px;
+}
+
+.cursorB {
+  cursor: url(cursorPointer.cur),auto !important
+}
+.cursorW {
+  cursor: url(cursorPointerWhite.cur),auto !important
+}
+
+.navigation:hover .bar1 {
+  background-color: #dc143c !important;
+}
+.navigation:hover .bar2 {
+  background-color: #dc143c !important;
+}
+.navigation:hover .bar3 {
+  background-color: #dc143c !important;
+}
+
+.bar1, .bar2, .bar3 {
+  width: 35px;
+  height: 5px;
+  border-radius: 5px 5px 5px 5px;
+  background-color: #000;
+  margin: 6px 0;
+  transition: 0.4s;
+}
+
+.change .bar1 {
+  -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+  transform: rotate(-45deg) translate(-9px, 6px);
+}
+
+.change .bar2 {opacity: 0;}
+
+.change .bar3 {
+  -webkit-transform: rotate(45deg) translate(-8px, -8px);
+  transform: rotate(45deg) translate(-8px, -8px);
+}
+
+.menuBoxShadow {
+  animation: BSAnim 0.5s forwards linear;
+}
+
+/*subPage */
+
+.SubNavigation {
+  position: absolute;
+  top: 15vh;
+  left: 50px;
+  height: 50px;
+  width: 550px;
+  font-size: 38px;
+}
+
+.nav {
+  width: 100%;
+  height: 20%;
+  position: relative;
+  line-height: 20%;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.nav div.main_list {
+  height: 65px;
+  float: right;
+  text-align: right;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.nav div.main_list ul {
+  width: 100%;
+  height: 65px;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav div.main_list ul li {
+  width: auto;
+  height: 65px;
+  padding: 0;
+  padding-right: 3rem;
+}
+
+.nav div.main_list ul li a {
+  text-decoration: none;
+  line-height: 65px;
+  font-size: 2.4rem;
+}
+
+.nav div.main_list ul li a:hover {
+  color: #dc143c;
+}
+
+a:hover{
+  text-decoration: none;
+}
+
+.navBtn {
+  position: relative;
+  overflow: hidden;
+}
+
+.navBtn a {
+  position: relative;
+  transition: all .45s ease-Out;
+}
+
+#underline {
+  width: 50%;
+  height: 3px;
+  margin-top: 15px;
+  align-self: flex-end;
+  left: -215px;
+  background: #dc143c;
+  position: absolute;
+  transition: all .3s ease-Out;
+  bottom: 0;
+}
+
+.navBtn:hover #underline {
+  left: 0;
+}
+#aboutBtn {
+  width: 20% !important;
+}
+
+.selected
+{
+  font-weight: 900;
+  color: #dc143c !important;
+}
+.navLinksB a {
+  color: black;
+  cursor: url(cursorPointer.cur),auto !important;
+}
+.navLinksW a {
   color: white;
+  cursor: url(cursorPointerWhite.cur),auto !important;
 }
 
-.App-link {
-  color: #61dafb;
+.subContent {
+  position: absolute;
+  top: 25vh;
+  left: 30px;
+  height: 500px;
+  width: 550px;
+  font: 300 24px/1 'Source Sans Pro', Arial, sans-serif;
+  color: grey;
 }
 
-@keyframes App-logo-spin {
+/* footer Icons */
+
+.iconsBar {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  height: 80px;
+  width: 600px;
+  font-family: "Quicksand", sans-serif;
+}
+
+.iconsBar a:hover {
+  color: #dc143c !important;
+}
+
+.footIcon {
+  height: 40px;
+  width: 40px;
+  font-size: 30px;
+  float: right;
+  margin-left: 30px;
+  margin-top: 8px;
+}
+
+.cvi {
+  font-weight: 900;
+  font-size: 35px;
+  margin-top: 0 !important;
+  margin-right: 7px;
+}
+
+.currentLang {
+  font-weight: 900;
+  font-size: 30px;
+  float: right;
+  margin-left: 30px;
+  margin-top: 2px;
+}
+
+#LangIcon:hover .chooseLang {
+  visibility: visible !important;
+}
+
+.chooseLang {
+  visibility: hidden;
+}
+
+.chooseLang {
+  position: absolute;
+  font-weight: 900;
+  font-size: 30px;
+  margin-left: 550px;
+  top: -30px;
+}
+
+.chooseLang:hover {
+  color: #dc143c !important;
+}
+
+.footIconB {
+  cursor: url(cursorPointer.cur),auto !important
+}
+.footIconW {
+  cursor: url(cursorPointerWhite.cur),auto !important
+}
+
+/*about section */
+
+.aboutMeHref {
+  color: #dc143c;
+  text-decoration: none !important;
+}
+.aboutMeHref:hover {
+  border-bottom: solid 2px #dc143c;
+}
+.aboutMeHref:visited, .aboutMeHref:active {
+ color: #8c0d26;
+}
+
+.colorRed {
+  color: #dc143c;
+}
+/* mail sender section */
+
+
+.mailSender, .mailSubject, .mailDescription {
+  margin: 20px 5px 20px 5px;
+}
+
+
+.mailSenderInput, .mailSubjectInput, .descriptionInput {
+  cursor: url(cursorText.cur), auto !important;
+  width: 300px;
+  height: 40px;
+  font-size: 24px;
+  border-left-color: transparent;
+  border-top-color: transparent;
+  border-bottom-color: #dc143c;
+  border-right-color: #dc143c;
+  padding-left: 10px;
+  color: #dc143c;
+  background-color: transparent;
+}
+.mailSenderInput:focus, .mailSubjectInput:focus, .descriptionInput:focus {
+  outline-color: #dc143c;
+}
+
+.mailSubjectInput {
+    margin-left: 55px;
+}
+
+.descriptionInput {
+  width: 500px;
+  height: 250px;
+  margin-top: 15px;
+  padding-top: 5px;
+  resize: none;
+}
+
+.mailMeSendButton {
+  cursor: url(cursorPointerDefault.cur),auto !important;
+  position: absolute;
+  left: 350px;
+  display: block;
+  background: none;
+  margin: 0;
+  color: #dc143c;
+  font-size: inherit;
+  font-weight: 700;
+  vertical-align: middle;
+  width: 250px;
+  height: 50px;
+  padding: 0;
+  border: none;
+}
+
+.mailMeSendButton:focus {
+  border-color: #dc143c;
+  outline-color: #dc143c;
+}
+
+/*bottom screen arrow*/
+
+.footer {
+  position: fixed;
+  left: 49vw;
+  bottom: 0;
+  height: 100px;
+  width: 100px;
+}
+
+.phantom {
+  display: block;
+  height: 0;
+  width: 100%;
+}
+
+.arrow {
+  position: absolute;
+  top: 10%;
+  width: 3vmin;
+  height: 3vmin;
+  background: transparent;
+  border-top: 1vmin solid #000;
+  border-right: 1vmin solid #000;
+  box-shadow: 0 0 0 lightgray;
+  transition: all 200ms ease;
+}
+
+.arrowBlack {
+  border-top: 1vmin solid #000 !important;
+  border-right: 1vmin solid #000 !important;
+  box-shadow: 0 0 0 lightgray !important;
+}
+
+.arrowWhite {
+  border-top: 1vmin solid #fff !important;
+  border-right: 1vmin solid #fff !important;
+  box-shadow: 0 0 0 lightgray !important;
+  cursor: url(cursorPointerWhite.cur),auto !important;
+}
+
+
+
+.arrow.leftA {
+  animation: rotateL 0.5s forwards linear;
+}
+
+.arrow.rightA {
+  animation: rotateR 0.5s forwards linear;
+}
+
+@keyframes rotateL {
   from {
-    transform: rotate(0deg);
+    transform: translate3d(0, 50%, 0) rotate(-45deg);
+  } to {
+      transform: translate3d(0, 50%, 0) rotate(-225deg);
+    }
+}
+
+@keyframes rotateR {
+  from {
+    transform: translate3d(0, 50%, 0) rotate(-225deg);
+  } to {
+      transform: translate3d(0, 50%, 0) rotate(-45deg);
+    }
+}
+
+.click {
+  width: 51px;
+  height: 60px;
+  background-color: transparent;
+  position: absolute;
+  top: 20px;
+  left: -7px;
+  z-index: 2;
+  text-decoration: none;
+  cursor: url(cursorPointer.cur),auto !important;
+}
+
+.click.clickW {
+  cursor: url(cursorPointerWhite.cur),auto !important;
+}
+
+.click:hover + .arrowBlack {
+  border-color: #dc143c !important;
+  box-shadow: 0.5vmin -0.5vmin 0 #000 !important;
+}
+
+.click:hover + .arrowWhite {
+  border-color: #dc143c !important;
+  box-shadow: 0.5vmin -0.5vmin 0 #fff !important;
+}
+
+.arrow:before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+}
+
+.arrow:active {
+  border-top-width: 0.5vmin;
+  border-right-width: 0.5vmin;
+}
+
+.footer {
+  animation: goUpA 0.5s forwards linear;
+}
+.footer.inactive {
+  animation: goDownA 0.5s forwards linear;
+}
+
+@keyframes goDownA {
+  from {
+    bottom: 0;
+  } to {
+  bottom: -100px;
+      }
+}
+
+@keyframes goUpA {
+  from {
+    bottom: -100px;
+  } to {
+  bottom: 0;
+      }
+}
+
+@media screen and (max-width: 740px) {
+  .navigation.change {
+    right: 25vw !important;
   }
-  to {
-    transform: rotate(360deg);
+  .iconsBar {
+    left: -5vw !important;
   }
 }
+
